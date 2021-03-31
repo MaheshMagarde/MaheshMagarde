@@ -11,6 +11,7 @@ class hello:
 class Avg(hello):
     def Avg(self):
         pass
+    mahesh
 
 
 
