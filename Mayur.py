@@ -11,4 +11,4 @@ class hello:
 class Avg(hello):
     def Avg(self):
         pass
-Mahesh Magade.... 
+'Mahesh Magade'
