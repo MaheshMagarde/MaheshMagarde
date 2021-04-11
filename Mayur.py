@@ -69,9 +69,10 @@ class Slope_Dist():                          #Completed
         r.append(self.sec_pt[0])
         s.append(self.sec_pt[1])
         slope = (s[1]-s[0])/(r[1]-r[0])
+        # how to insert points example line1 = Slope_Dist((-4,-1),(2,-5))
         return slope
-#how to insert points example line1 = Slope_Dist((-4,-1),(2,-5))
-def sp_H():                 #It is HackerRank Prob. Drow H in special Way COMPLETED
+
+def sp_H():                 #It is HackerRank Prob. Draw H in special Way COMPLETED
     # Replace all ______ with rjust, ljust or center.
 
     thickness = int(input())  # This must be an odd number
