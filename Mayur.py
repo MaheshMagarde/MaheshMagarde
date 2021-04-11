@@ -1,4 +1,3 @@
-'''
 class hello:
     def __init__(self,m1,m2,m3):
         self.m1 = m1
@@ -12,5 +11,9 @@ class hello:
 class Avg(hello):
     def Avg(self):
         pass
-'''
+    mahesh
+
+
+
+
 
