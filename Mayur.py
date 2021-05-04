@@ -44,7 +44,10 @@ class MyHTMLParser1(HTMLParser):
 parser = MyHTMLParser1()
 parser.feed(k)
 '''
-class Slope_Dist():                          #Completed
+import matplotlib.pyplot as plt
+import numpy as np
+
+class Slope_Dist_Graph():                          #Completed
 
     def __init__(self,first_pt,sec_pt):
         self.sec_pt = sec_pt
@@ -60,7 +63,7 @@ class Slope_Dist():                          #Completed
 
         dist = ((r[0]-r[1])**2 + (s[0]-s[1])**2)**0.5
 
-        return dist
+        return  dist
     def slope(self):
         r = []
         s = []
@@ -69,10 +72,16 @@ class Slope_Dist():                          #Completed
         r.append(self.sec_pt[0])
         s.append(self.sec_pt[1])
         slope = (s[1]-s[0])/(r[1]-r[0])
-        # how to insert points example line1 = Slope_Dist((-4,-1),(2,-5))
-        return slope
 
-def sp_H():                 #It is HackerRank Prob. Draw H in special Way COMPLETED
+        return slope
+    def graph(self):
+        x = np.arange(0,100)
+        y = (self.slope() * (x - self.first_pt[0])) + self.first_pt[1]
+        plt.plot(x,y)
+        plt.show()
+        # line1 = Slope_Dist((1,2),(2,3))
+
+def sp_H():
     # Replace all ______ with rjust, ljust or center.
 
     thickness = int(input())  # This must be an odd number
@@ -111,6 +120,19 @@ def lcm(x, y):  # completed
         g += 1
     return a
 
+def factors(n):
+    s=[n]
+    even_fac = []
+    for i in range(1,n):
+        if n%i==0:
+            s.append(i)
+    for j in s:
+        if j%2==0:
+                even_fac.append(j)
+    print(f'No. of factors are {len(s)}')
+    print(f'Even No. of factors {len(even_fac)}\nOdd No. of Factor {(len(s))-(len(even_fac))}')
+    print(s)
+
 def common_factor(a, b):  # completed
     # Using place holder variable
     s = []
@@ -133,6 +155,7 @@ def common_factor(a, b):  # completed
                 r.append(A)
     return r
 
+
 def prime(n):  # Completed
     if n == 1 or n == 0:
         return 'Not prime Nor Composite'
@@ -150,7 +173,6 @@ def persentage(*args, pers):  # pers means how many % you want to calculate
     h = sum(args) * (pers / 100)
     return h
 
-
 def vol_spere(r): return 4 / 3 * (3.14) * r ** 3
 def vol_cube(s): return s ** 3
 def vol_cuboid(l, b, h): return l * b * h
@@ -160,8 +182,9 @@ def vol_cone(r, h): return 1 / 3 * (3.14) * (r ** 2) * h
 
 def area_square(s): return s ** 2
 def area_rectangle(l, b): return l * b
-def triangle(b, h): return (0.5) * b * h
+def area_triangle(b, h): return (0.5) * b * h
 def area_circle(r): return (3.14) * r ** 2
+
 
 #no. of diagonals in the polygons side (n)
 #sum of angles of tha polygons of side (n)
