@@ -81,6 +81,38 @@ class Slope_Dist_Graph():                          #Completed
         plt.show()
         # line1 = Slope_Dist((1,2),(2,3))
 
+def enycryption(Sentance):
+    Translation = ''
+    for i in Sentance:
+        if i in 'Aa': Translation+='#'
+        elif i in 'Bb': Translation+='~'
+        elif i in 'Cc': Translation += '`'
+        elif i in 'Dd': Translation +='!'
+        elif i in 'Ee': Translation +='ṇ'
+        elif i in 'Ff': Translation +='?'
+        elif i in 'Gg': Translation += '/'
+        elif i in 'Hh': Translation +='ā'      # ctrl + alt + a = ā
+        elif i in 'Ii': Translation += '₹'        # ctrl + alt + 4 = ₹
+        elif i in 'Jj': Translation +='%'
+        elif i in 'Kk': Translation +='^'
+        elif i in 'Ll': Translation +='&'
+        elif i in 'Mm': Translation +='*'
+        elif i in 'Nn': Translation +='-'
+        elif i in 'Oo': Translation +='_'
+        elif i in 'Pp': Translation +='æ'      #ctrl + alt + q = æ
+        elif i in 'Qq': Translation +='ē'      #ctrl + alt + e = ē
+        elif i in 'Rr': Translation +='|'
+        elif i in 'Ss': Translation +=';'
+        elif i in 'Tt': Translation +='/'
+        elif i in 'Uu': Translation +='r̥'       #ctrl + alt + r = r̥
+        elif i in 'Vv': Translation +='ū'      #ctrl + alt + u = ū
+        elif i in 'Ww': Translation +='<'
+        elif i in 'Xx': Translation +='>'
+        elif i in 'Yy': Translation +=','
+        elif i in 'Zz': Translation +='$'
+        else: Translation+Sentance
+    print('Please copy that code:',Translation)
+
 def sp_H():
     # Replace all ______ with rjust, ljust or center.
 
