@@ -244,9 +244,9 @@ def area_rectangle(l, b): return l * b
 def area_triangle(b, h): return (0.5) * b * h
 def area_circle(r): return (3.14) * r ** 2
 
-
-#no. of diagonals in the polygons side (n)
-#sum of angles of tha polygons of side (n)
+#POLYGONS
+def Angle_sum(n): return (n-2)*180                     #Sum of angles of tha polygons of side (n)
+def Diagonals_Num(n): return int((n*(n-3))/2)          #Number of diagonals
 #def mode:
 
 #def mean:
