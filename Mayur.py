@@ -46,6 +46,7 @@ parser.feed(k)
 '''
 import matplotlib.pyplot as plt
 import numpy as np
+import random as rm
 
 class Slope_Dist_Graph():                          #Completed
 
@@ -187,6 +188,32 @@ def common_factor(a, b):  # completed
                 r.append(A)
     return r
 
+def Read_my_mind():
+    hlf = rm.randrange(0, 1000, 10)
+    print("Hello....!Can i read your mind..... I think Yes\nThink any number in your mind")
+    YN = input("If done write 'YES':")
+    if YN in 'YESYesyes':
+        print("Now double that in your mind")
+        A = input("If done write 'YES':")
+        if A in 'YESYesyes':
+            print(f"Now Add {hlf} on that number")
+            B = input("If done write 'YES':")
+            if B in 'YESYesyes':
+                print("Now divide that number by 2")
+                C = input("If done write 'YES':")
+                if C in 'YESYesyes':
+                    print("Now you rember which number you think Substract that number by present number")
+                    D = input("If done write 'YES':")
+                    if D in 'YESYesyes':
+                        print(f"Now, Multiply that number by 5 and your answer is {int((hlf / 2) * 5)}.")
+                        print('I Prove you i will able to read your mind If ans is wrong pls try again')
+                    else: print("If you not remember please exit and run again")
+                else: print('If not able to devide use calculator or try again')
+            else: print("Please Exit and Run again")
+        else: print("Think small number and run again or use Calculator")
+    else: print("Think and run again")
+
+Read_my_mind()
 
 def prime(n):  # Completed
     if n == 1 or n == 0:
