@@ -213,7 +213,7 @@ def Read_my_mind():
         else: print("Think small number and run again or use Calculator")
     else: print("Think and run again")
 
-Read_my_mind()
+
 
 def prime(n):  # Completed
     if n == 1 or n == 0:
@@ -227,6 +227,10 @@ def prime(n):  # Completed
             else:
                 pass
         return 'Prime'
+    
+    
+    
+
 
 def persentage(*args, pers):  # pers means how many % you want to calculate
     h = sum(args) * (pers / 100)
