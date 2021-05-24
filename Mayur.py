@@ -47,6 +47,8 @@ parser.feed(k)
 import matplotlib.pyplot as plt
 import numpy as np
 import random as rm
+from tkinter import *
+import math as m
 
 class Slope_Dist_Graph():                          #Completed
 
@@ -227,6 +229,162 @@ def prime(n):  # Completed
             else:
                 pass
         return 'Prime'
+
+def calculator():
+    #import first
+    #from tkinter import *
+    #import math as m
+
+    root = Tk()
+    root.title("Simple Calculator")
+    e = Entry(root,width=35,borderwidth=5,fg="Black",bg="yellow")
+    e.grid(row=0,column=0, columnspan=5 ,padx=10, pady=10)
+
+    #LCM
+    def lcm(x, y):  # completed
+        if x > y:
+            g = x
+        if y > x:
+            g = y
+        while (True):
+            if g % x == 0 and g % y == 0:
+                a = g
+                break
+            g += 1
+        return a
+    #Prime
+    def prime(n):  # Completed
+        if n == 1 or n == 0:
+            return 'Not prime Nor Composite'
+        elif n == 2:
+            return 'Prime'
+        elif n > 2:
+            for i in range(2, n):
+                if n % i == 0:
+                    return 'Composite'
+                else:
+                    pass
+            return 'Prime'
+
+
+
+    def button_click(number):
+        #e.delete(0,END)
+        cureent = e.get()
+        e.delete(0,END)
+        e.insert(0,str(cureent)+str(number))
+    def button_clear(): e.delete(0,END)         #Clear
+
+    def button_add():
+        first_number= e.get()
+        global f_num
+        global math
+        math = "addition"
+        f_num=int(first_number)
+        e.delete(0,END)
+
+    def button_sub():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "subtraction"
+        f_num = int(first_number)
+        e.delete(0, END)
+
+    def button_mul():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "multiplication"
+        f_num = int(first_number)
+        e.delete(0, END)
+
+    def button_div():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "division"
+        f_num = int(first_number)
+        e.delete(0, END)
+    def button_sin():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "prime"
+        f_num = int(first_number)
+        e.delete(0, END)
+    def button_LCM():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "LCM"
+        f_num = int(first_number)
+        e.delete(0, END)
+    def button_GCD():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "GCD"
+        f_num = int(first_number)
+        e.delete(0, END)
+    def button_EXP():
+        first_number = e.get()
+        global f_num
+        global math
+        math = "EXP"
+        f_num = int(first_number)
+        e.delete(0, END)
+
+
+    #Equal
+    def button_equal():
+        second_num= e.get()
+        e.delete(0,END)
+        #conditions
+        if math == "addition": e.insert(0,(int(second_num)+int(f_num)))
+        if math == "subtraction": e.insert(0, (int(f_num)-int(second_num)))
+        if math == "multiplication": e.insert(0, (int(second_num) * int(f_num)))
+        if math == "division": e.insert(0, ( int(f_num)/int(second_num)))
+        if math == "LCM": e.insert(0, lcm(int(f_num),int(second_num)))
+        if math == "GCD": e.insert(0, m.gcd(int(f_num), int(second_num)))
+        if math == "EXP": e.insert(0, m.pow(int(f_num), int(second_num)))
+        if math == "prime": e.insert(0, (prime(int(second_num))))
+        else: pass
+    #Define Number buttons
+
+    button_0 = Button(root,text="0",padx=20,pady=15,command= lambda: button_click(0),bg="blue").grid(row=4, column=1)
+
+    button_1 = Button(root,text="1",padx=20,pady=15,command= lambda:button_click(1),bg="blue").grid(row=3, column=0)
+    button_2 = Button(root,text="2",padx=20,pady=15,command= lambda:button_click(2),bg="blue").grid(row=3, column=1)
+    button_3 = Button(root,text="3",padx=20,pady=15,command= lambda:button_click(3),bg="blue").grid(row=3, column=2)
+
+    button_4 = Button(root,text="4",padx=20,pady=15,command= lambda:button_click(4),bg="blue").grid(row=2, column=0)
+    button_5 = Button(root,text="5",padx=20,pady=15,command= lambda:button_click(5),bg="blue").grid(row=2, column=1)
+    button_6 = Button(root,text="6",padx=20,pady=15,command= lambda:button_click(6),bg="blue").grid(row=2, column=2)
+
+    button_7 = Button(root,text="7",padx=20,pady=15,command= lambda:button_click(7),bg="blue").grid(row=1, column=0)
+    button_8 = Button(root,text="8",padx=20,pady=15,command= lambda:button_click(8),bg="blue").grid(row=1, column=1)
+    button_9 = Button(root,text="9",padx=20,pady=15,command= lambda:button_click(9),bg="blue").grid(row=1, column=2)
+
+    #Define opration button
+
+    button_E = Button(root,text="=",padx=20,pady=15,command=button_equal,bg="green").grid(row=4, column=0)
+    button_c = Button(root,text="C",padx=20,pady=15,command=button_clear,bg="red").grid(row=1,column = 3)
+
+    button_P = Button(root,text="+",padx=18,pady=15,command= button_add,bg="orange").grid(row=4, column=3)
+    button_sub = Button(root,text="-",padx=20,pady=15,command= button_sub,bg="orange").grid(row=4, column=2)
+    button_mul = Button(root,text="*",padx=20,pady=15,command= button_mul,bg="orange").grid(row=2, column=3)
+    button_div = Button(root,text="/",padx=20,pady=15,command= button_div,bg="orange").grid(row=3, column=3)
+    button_sin = Button(root,text="Prm",padx=12,pady=15,command= button_sin,bg="violet").grid(row=5, column=0)
+    button_LCM = Button(root,text="LCM",padx=11,pady=15,command= button_LCM,bg="violet").grid(row=5,column=1)
+    button_GCD = Button(root, text="HCF", padx=10, pady=15, command=button_GCD, bg="violet").grid(row=5, column=2)
+    button_EXP = Button(root, text="EXP", padx=12, pady=15, command=button_EXP, bg="violet").grid(row=5, column=3)
+
+
+    #mybotton = Button(root,text="Download",padx=50,fg ='green',bg="red",command=Openme)
+
+
+    root.mainloop()
 
 def persentage(*args, pers):  # pers means how many % you want to calculate
     h = sum(args) * (pers / 100)
